@@ -1,0 +1,52 @@
+{
+  "name": "function-selector",
+  "displayName": "Function Selector",
+  "description": "Selecciona funciones completas desde el menú contextual con un solo clic",
+  "version": "0.0.4",
+  "icon": "logo2.png",
+  "publisher": "Jaimesan",
+  "author": {
+    "name": "Jaime Sánchez"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ja1m3st/function-selector"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onCommand:function-selector.selectFunction"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "function-selector.selectFunction",
+        "title": "Select Function"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "function-selector.selectFunction",
+          "group": "navigation",
+          "when": "editorTextFocus"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "echo 'No build required'",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/node": "^14.x"
+  }
+}
